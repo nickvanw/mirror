@@ -1,3 +1,7 @@
 FROM alpine:3
 
-# TODO
+RUN apk --no-cache add git openssh
+
+COPY *.sh /run
+
+ENTRYPOINT ["/run/mirror.sh"]
